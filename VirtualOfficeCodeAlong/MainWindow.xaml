@@ -1,0 +1,175 @@
+﻿<Window x:Class="VirtualOfficeCodeAlong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualOfficeCodeAlong"
+        mc:Ignorable="d" FontSize="15" 
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <!-- Main grid -->
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left grid -->
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Content="Employees"
+                VerticalAlignment="Center"
+                FontSize="24"
+                FontWeight="Bold"
+                />
+            <Label
+                Name="lblFirstName"
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="First name: "
+                VerticalAlignment="Center"
+                />
+            <Label
+                Name="lblLastName"
+                Grid.Column="0"
+                Grid.Row="2"
+                Content="Last name: "
+                VerticalAlignment="Center"
+                />
+            <Label
+                Name="lblAge"
+                Grid.Column="0"
+                Grid.Row="3"
+                Content="Age: "
+                VerticalAlignment="Center"
+                />
+            <Label
+                Name="lblSalary"
+                Grid.Column="0"
+                Grid.Row="4"
+                Content="Salary: "
+                VerticalAlignment="Center"
+                />
+            <Label
+                Name="lblBio"
+                Grid.Column="0"
+                Grid.Row="5"
+                Content="Bio: "
+                VerticalAlignment="Center"
+                />
+            <Label
+                Name="lblDepartment"
+                Grid.Column="0"
+                Grid.Row="6"
+                Content="Department: "
+                VerticalAlignment="Center"
+                />
+
+            <TextBox
+                Name="tbxFirstName"
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="4"
+                TextChanged="TextBox_TextChanged"
+                />
+            <TextBox
+                Name="tbxLasttName"
+                Grid.Column="1"
+                Grid.Row="2"
+                Margin="4"
+                TextChanged="TextBox_TextChanged"
+                />
+            <TextBox
+                Name="tbxAge"
+                Grid.Column="1"
+                Grid.Row="3"
+                Margin="4"
+                TextChanged="TextBox_TextChanged"
+                />
+            <TextBox
+                Name="tbxSalary"
+                Grid.Column="1"
+                Grid.Row="4"
+                Margin="4"
+                TextChanged="TextBox_TextChanged"
+                />
+            <TextBox
+                Name="tbxBio"
+                Grid.Column="1"
+                Grid.Row="5"
+                Margin="5"
+                TextWrapping="Wrap"
+                />
+
+            <ComboBox
+                Name="cbxDepartment"
+                Grid.Column="1"
+                Grid.Row="6"
+                Margin="4"
+                SelectionChanged="cbxDepartment_SelectionChanged"
+                />
+
+            <Button
+                Name="btnAdd"
+                Grid.Column="1"
+                Grid.Row="7"
+                Margin="4"
+                Content="Add employee" 
+                Click="btnAdd_Click"
+                />
+        </Grid>
+
+        <!-- Right grid -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ListView
+                Name="lvEmployees"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2" 
+                SelectionChanged="lvEmployees_SelectionChanged"
+                
+                />
+
+            <Button
+                Name="btnShowDetails"
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="Show Details"
+                Margin="20" Click="btnShowDetails_Click"
+                />
+            <Button
+                Name="btnRemove"
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="Remove"
+                Margin="20" Click="btnRemove_Click"
+                />
+        </Grid>
+    </Grid>
+</Window>
